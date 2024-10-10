@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sidewalk Slope Calculator</title>
+</head>
+<body>
+  <h1>Sidewalk Slope Calculator</h1>
+
+  <form>
+    Distance (ft): <input type="number" id="distance" required><br><br>
+    Elevation Difference (ft): <input type="number" id="elevation" required><br><br>
+    <button type="button" onclick="calculateSlope()">Calculate Slope</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateSlope() {
+      var distance = document.getElementById("distance").value;
+      var elevation = document.getElementById("elevation").value;
+      
+      // Formula: Slope = (Elevation Difference / Distance) * 100
+      var slope = (elevation / distance) * 100;
+      
+      document.getElementById("result").innerHTML = "Slope: " + slope.toFixed(2) + "%";
+    }
+  </script>
+</body>
+</html>
